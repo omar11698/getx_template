@@ -6,6 +6,9 @@ import 'package:getx_template/app/routes/app_pages.dart';
 
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize any services or dependencies here if needed
+  
   runApp(const MyApp());
 }
 
