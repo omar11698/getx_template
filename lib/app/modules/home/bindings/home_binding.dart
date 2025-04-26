@@ -7,9 +7,6 @@ import '../controllers/home_controller.dart';
 class HomeBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<DioHandler>(
-      () => DioHandler(),
-    );
     // Registering the DioHandler and RemoteDataSource
     Get.lazyPut<RemoteDataSource>(
       () => RemoteDataSource(
