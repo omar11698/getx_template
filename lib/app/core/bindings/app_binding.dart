@@ -8,5 +8,4 @@ class AppBindings extends Bindings {
     Get.lazyPut(() => DioHandler());
     Get.lazyPut(() => RemoteDataSource(Get.find<DioHandler>()));
   }
-
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'index.dart';
+
 class NetworkImageWidget extends StatelessWidget {
   final String imageUrl;
   final double? width;
@@ -40,7 +42,7 @@ class NetworkImageWidget extends StatelessWidget {
             height: height,
             color: Colors.grey[300],
             child: const Center(
-              child: CircularProgressIndicator(strokeWidth: 2),
+              child: LoadingWidget(),
             ),
           );
         },
