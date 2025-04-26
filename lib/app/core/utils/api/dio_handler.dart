@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
-import 'package:getx_template/app/core/utils/api/api_keys.dart';
+import 'package:getx_template/app/core/constants/api_keys.dart';
 import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
 
 class DioHandler {
