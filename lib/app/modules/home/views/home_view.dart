@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_template/app/routes/app_pages.dart';
 import 'package:getx_template/app/widgets/network_image_widget.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -15,11 +16,26 @@ class HomeView extends GetView<HomeController> {
         title: const Text('HomeView'),
         centerTitle: true,
         actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              Get.toNamed(Routes.SETTINGS);
-            },
+          Row(
+            children: [
+              Obx(
+                () => IconButton(
+                  icon:
+                      !controller.isDarkMode.value
+                          ? const Icon(Iconsax.moon)
+                          : const Icon(Iconsax.sun),
+                  onPressed: () {
+                    controller.toggleTheme();
+                  },
+                ),
+              ),
+              IconButton(
+                icon: const Icon(Icons.settings),
+                onPressed: () {
+                  Get.toNamed(Routes.SETTINGS);
+                },
+              ),
+            ],
           ),
         ],
       ),

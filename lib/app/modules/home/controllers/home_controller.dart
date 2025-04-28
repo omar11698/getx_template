@@ -1,10 +1,13 @@
 import 'package:get/get.dart';
+import 'package:getx_template/app/core/theme/dark/dark_theme.dart';
+import 'package:getx_template/app/core/theme/light/light_theme.dart';
 import 'package:getx_template/app/data/data_source/remote_data_source.dart';
 import 'package:getx_template/app/data/models/product_model.dart';
 
 class HomeController extends GetxController {
   final RemoteDataSource remoteDataSource;
   HomeController({required this.remoteDataSource});
+  final isDarkMode = false.obs;
   final isFetchingProducts = false.obs;
   final products = <ProductModel>[].obs;
   final errorMessage = ''.obs;
@@ -20,8 +23,10 @@ class HomeController extends GetxController {
         },
         (apiProducts) {
           // Handle success
-          products.value=apiProducts;
-          Get.log('Products fetched successfully: ${products.toString()} items');
+          products.value = apiProducts;
+          Get.log(
+            'Products fetched successfully: ${products.toString()} items',
+          );
         },
       );
     } catch (e) {
@@ -30,6 +35,16 @@ class HomeController extends GetxController {
       Get.log('Error fetching products: $e');
     } finally {
       isFetchingProducts.value = false;
+    }
+  }
+
+  toggleTheme() {
+    if (Get.isDarkMode) {
+      Get.changeTheme(OLightTheme.themeData);
+      isDarkMode.value = false;
+    } else {
+      Get.changeTheme(ODarkTheme.themeData);
+      isDarkMode.value = true;
     }
   }
 
