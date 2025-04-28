@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
+class OButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
   final bool isDisabled;
@@ -8,7 +8,7 @@ class CustomButton extends StatelessWidget {
   final double? height;
   final Color? color;
 
-  const CustomButton({
+  const OButton({
     super.key,
     required this.title,
     required this.onPressed,

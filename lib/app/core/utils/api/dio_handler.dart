@@ -3,15 +3,15 @@ import 'package:dio/dio.dart';
 import 'package:getx_template/app/core/constants/api_keys.dart';
 import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
 
-class DioHandler {
-  static final DioHandler _instance = DioHandler._internal();
+class ODioHandler {
+  static final ODioHandler _instance = ODioHandler._internal();
   late Dio _dio;
 
-  factory DioHandler() {
+  factory ODioHandler() {
     return _instance;
   }
 
-  DioHandler._internal() {
+  ODioHandler._internal() {
     _dio = Dio(
       BaseOptions(
         baseUrl: _baseUrl,
@@ -25,9 +25,7 @@ class DioHandler {
     );
 
     _dio.interceptors.addAll([
-      TalkerDioLogger(
-        
-      ),
+      TalkerDioLogger(),
       InterceptorsWrapper(
         onRequest: (options, handler) {
           // You can add authentication tokens here automatically
@@ -47,7 +45,7 @@ class DioHandler {
     ]);
   }
 
-  static String _baseUrl = ApiKeys.baseUrl;
+  static String _baseUrl = OApiKeys.baseUrl;
 
   static void setBaseUrl(String url) {
     _baseUrl = url;

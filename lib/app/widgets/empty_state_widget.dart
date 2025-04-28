@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class EmptyStateWidget extends StatelessWidget {
+class OEmptyStateWidget extends StatelessWidget {
   final String message;
   final String? imageAsset;
 
-  const EmptyStateWidget({super.key, required this.message, this.imageAsset});
+  const OEmptyStateWidget({super.key, required this.message, this.imageAsset});
 
   @override
   Widget build(BuildContext context) {

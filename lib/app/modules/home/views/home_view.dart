@@ -33,7 +33,7 @@ class HomeView extends GetView<HomeController> {
               return Card(
                 child: Column(
                   children: [
-                    NetworkImageWidget(
+                    ONetworkImageWidget(
                       imageUrl: controller.products[index].imageUrl,
                     ),
                     const SizedBox(height: 8),

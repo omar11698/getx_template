@@ -14,15 +14,11 @@ class AppPages {
   AppPages._();
 
   static const INITIAL = Routes.HOME;
-
   static final routes = [
     GetPage(
       name: _Paths.HOME,
       page: () => const HomeView(),
-      bindings: [
-        AppBindings(),
-        HomeBinding(),
-      ],
+      bindings: [OBindings(), HomeBinding()],
     ),
     GetPage(
       name: _Paths.SETTINGS,

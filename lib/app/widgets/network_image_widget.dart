@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'index.dart';
 
-class NetworkImageWidget extends StatelessWidget {
+class ONetworkImageWidget extends StatelessWidget {
   final String imageUrl;
   final double? width;
   final double? height;
   final BoxFit fit;
   final BorderRadius? borderRadius;
 
-  const NetworkImageWidget({
+  const ONetworkImageWidget({
     super.key,
     required this.imageUrl,
     this.width,
@@ -41,9 +41,7 @@ class NetworkImageWidget extends StatelessWidget {
             width: width,
             height: height,
             color: Colors.grey[300],
-            child: const Center(
-              child: LoadingWidget(),
-            ),
+            child: const Center(child: OLoadingWidget()),
           );
         },
       ),

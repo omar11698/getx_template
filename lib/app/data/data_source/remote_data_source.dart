@@ -4,23 +4,23 @@ import 'package:getx_template/app/core/utils/api/dio_handler.dart';
 import 'package:getx_template/app/data/models/product_model.dart';
 
 class RemoteDataSource {
- final DioHandler dioHandler;
+  final ODioHandler dioHandler;
 
   RemoteDataSource(this.dioHandler);
 
   // Example method to fetch products
-  Future<Either<Failure,List<ProductModel>>> getProducts() async {
+  Future<Either<Failure, List<ProductModel>>> getProducts() async {
     try {
       final response = await dioHandler.get('/products');
       // Handle the response
       if (response.statusCode != 200) {
         return Left(ServerFailure('Failed to load products'));
-      }
-      else{
+      } else {
         // Assuming the response data is a list of products
-        final List<ProductModel> products = (response.data as List)
-            .map((product) => ProductModel.fromMap(product))
-            .toList();
+        final List<ProductModel> products =
+            (response.data as List)
+                .map((product) => ProductModel.fromMap(product))
+                .toList();
         return Right(products);
       }
     } catch (e) {
@@ -28,6 +28,7 @@ class RemoteDataSource {
       throw Exception('Failed to load products: $e');
     }
   }
+
   // Example method to fetch a single product
   addProductToCart(ProductModel product) async {
     try {
@@ -35,8 +36,7 @@ class RemoteDataSource {
       // Handle the response
       if (response.statusCode != 200) {
         return Left(ServerFailure('Failed to add product to cart'));
-      }
-      else{
+      } else {
         return Right(true);
       }
     } catch (e) {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppTheme {
+class OTheme {
   static final light = ThemeData.light().copyWith(
     primaryColor: Colors.blue,
     scaffoldBackgroundColor: Colors.white,

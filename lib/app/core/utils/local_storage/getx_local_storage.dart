@@ -1,6 +1,6 @@
 import 'package:get_storage/get_storage.dart';
 
-class AppLocalStorage {
+class OLocalStorage {
   static final GetStorage _box = GetStorage();
 
   static Future<void> init() async {

@@ -10,25 +10,25 @@ class SettingsView extends GetView<SettingsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(AppStrings.SETTINGS.tr), centerTitle: true),
+      appBar: AppBar(title: Text(OStrings.SETTINGS.tr), centerTitle: true),
       body: Center(
         child: ListTile(
           leading: Icon(Icons.language),
-          title: Text(AppStrings.ENGLISH.tr),
-          subtitle: Text(AppStrings.SELECT_YOUR_PREFERRED_LANGUAGE.tr),
+          title: Text(OStrings.ENGLISH.tr),
+          subtitle: Text(OStrings.SELECT_YOUR_PREFERRED_LANGUAGE.tr),
           trailing: Icon(Icons.arrow_forward_ios),
           onTap: () {
             // Handle language selection
             if (Get.locale?.languageCode == 'ar') {
               Get.defaultDialog(
-                title: AppStrings.LANGUAGE_CONFIRMATION_TITLE.tr,
-                content: Text(AppStrings.LANGUAGE_CONFIRMATION_MESSAGE.tr),
+                title: OStrings.LANGUAGE_CONFIRMATION_TITLE.tr,
+                content: Text(OStrings.LANGUAGE_CONFIRMATION_MESSAGE.tr),
                 onConfirm: () {
                   Get.back();
                   controller.changeLanguague(const Locale('en', 'US'));
                   Get.snackbar(
-                    AppStrings.LANGUAGE_CHANGED.tr,
-                    AppStrings.LANGUAGE_CHANGE_SUCCESS.tr,
+                    OStrings.LANGUAGE_CHANGED.tr,
+                    OStrings.LANGUAGE_CHANGE_SUCCESS.tr,
                     snackPosition: SnackPosition.BOTTOM,
                     backgroundColor: Colors.green,
                     colorText: Colors.white,
@@ -43,14 +43,14 @@ class SettingsView extends GetView<SettingsController> {
             } else {
               // Change to Arabic
               Get.defaultDialog(
-                title: AppStrings.LANGUAGE_CONFIRMATION_TITLE.tr,
-                content: Text(AppStrings.LANGUAGE_CHANGE_FAILED.tr),
+                title: OStrings.LANGUAGE_CONFIRMATION_TITLE.tr,
+                content: Text(OStrings.LANGUAGE_CHANGE_FAILED.tr),
                 onConfirm: () {
                   Get.back();
                   controller.changeLanguague(const Locale('ar', 'EG'));
                   Get.snackbar(
-                    AppStrings.LANGUAGE_CHANGED.tr,
-                    AppStrings.LANGUAGE_CHANGE_SUCCESS.tr,
+                    OStrings.LANGUAGE_CHANGED.tr,
+                    OStrings.LANGUAGE_CHANGE_SUCCESS.tr,
                     snackPosition: SnackPosition.BOTTOM,
                     backgroundColor: Colors.green,
                     colorText: Colors.white,

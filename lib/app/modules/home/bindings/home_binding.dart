@@ -10,12 +10,17 @@ class HomeBinding extends Bindings {
     // Registering the DioHandler and RemoteDataSource
     Get.lazyPut<RemoteDataSource>(
       () => RemoteDataSource(
-        Get.find<DioHandler>(), // Assuming DioHandler is registered in the dependency injection system
+        Get.find<
+          ODioHandler
+        >(), // Assuming DioHandler is registered in the dependency injection system
       ),
     );
     Get.lazyPut<HomeController>(
       () => HomeController(
-        remoteDataSource: Get.find<RemoteDataSource>(), // Injecting RemoteDataSource into HomeController
+        remoteDataSource:
+            Get.find<
+              RemoteDataSource
+            >(), // Injecting RemoteDataSource into HomeController
       ),
     );
   }

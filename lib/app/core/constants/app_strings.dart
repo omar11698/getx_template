@@ -1,4 +1,4 @@
-abstract class AppStrings {
+abstract class OStrings {
   static const String HELLO = 'hello';
   static const String SETTINGS = 'settings';
   static const String LANGUAGE = 'language';

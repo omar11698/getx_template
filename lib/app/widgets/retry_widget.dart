@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 
-class RetryWidget extends StatelessWidget {
+class ORetryWidget extends StatelessWidget {
   final String message;
   final VoidCallback onRetry;
 
-  const RetryWidget({super.key, required this.message, required this.onRetry});
+  const ORetryWidget({super.key, required this.message, required this.onRetry});
 
   @override
   Widget build(BuildContext context) {

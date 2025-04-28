@@ -28,6 +28,7 @@ class AuthenticationFailure extends Failure {
 class ValidationFailure extends Failure {
   ValidationFailure(super.message);
 }
+
 class FromJsonFailure extends Failure {
   FromJsonFailure(super.message);
 }
